@@ -76,7 +76,7 @@
   // Your custom JavaScript goes here
 
   // Bacon cloning
-  document.getElementById('baconAddButton').addEventListener('click', (evt) => {
+  document.querySelector('#overview button').addEventListener('click', (evt) => {
     // Clone the next node of the button's parent, which is our bacon section
     const baconCopy = evt.target.parentNode.nextElementSibling.cloneNode(true);
     // Insert a new bacon section by appending it to the parent of all bacons
