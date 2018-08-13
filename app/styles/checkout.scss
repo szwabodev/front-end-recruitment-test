@@ -1,0 +1,166 @@
+$badgeColor: black;
+$checkoutTitleColor: black;
+$checkoutFieldColor: white;
+
+$textInputLeftMargin: 10px;
+$checkoutBorderRadius: 5px;
+
+.checkout.title {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: $checkoutTitleColor;
+  position: relative;
+  left: -30px;
+}
+
+%checkoutField {
+  background: $checkoutFieldColor;
+  border-radius: $checkoutBorderRadius;
+  margin-top: 15px;
+  width: 49%;
+  box-shadow: 0 3px 4px #80808085;
+
+  > input {
+    border-bottom: none;
+    margin-left: $textInputLeftMargin;
+    color: rgb(158, 159, 164);
+    width: 85%;
+  }
+
+  > label {
+    left: $textInputLeftMargin;
+  }
+}
+
+form {
+  margin-left: 30px;
+}
+
+.checkout.field {
+  @extend %checkoutField;
+  &.country {
+    > select {
+      color: #0f0f2f;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      border-bottom: none;
+      width: 92%;
+      margin-left: $textInputLeftMargin;
+    }
+  }
+  &.full {
+    width: 98.5%;
+  }
+  &.last {
+    margin-bottom: 30px;
+  }
+}
+
+#lock_icon {
+  position: relative;
+  top: 2px;
+  font-size: 15px;
+}
+
+#code_info {
+  position: absolute;
+  right: 9px;
+  bottom: 20px;
+}
+
+#country_arrow {
+  @extend #code_info;
+  pointer-events: none;
+}
+
+#visa_badge {
+  @extend #code_info;
+  padding: 5px;
+  border: 1px solid #8080804a;
+  border-radius: 5px;
+}
+
+#complete_button {
+  width: 99%;
+  height: 50px;
+  font-weight: bold;
+  margin-top: 30px;
+  border-radius: $checkoutBorderRadius;
+  background-color: rgb(61, 205, 58);
+
+  > span.icon {
+    font-size: 18px;
+  }
+
+  :hover {
+    box-shadow: 0 5px 5px yellow;
+  }
+}
+
+// Order total part
+#order_total_main {
+  margin-top: 44px;
+  max-height: 300px;
+  background-color: $checkoutFieldColor;
+  border-radius: $checkoutBorderRadius;
+  box-shadow: 0 3px 4px #80808085;
+  padding: 10px;
+}
+
+#order_total {
+  border: 1px dashed #8080805e;
+  padding: 5px;
+}
+
+#order_total_title {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: darkblue;
+  font-size: 13px;
+}
+
+#total_table {
+  margin-top: 10px;
+  width: 100%;
+}
+
+tr.border > td {
+  border-bottom: 1px dashed #8080805e;
+  height: 20px;
+}
+
+.price {
+  text-align: right;
+  &.total {
+    font-size: 23px;
+    font-weight: bold;
+  }
+}
+
+// Editing default material design CSS:
+.mdl-demo .mdl-layout__tab-panel:not(#overview) {
+  background-color: #80808030;
+}
+
+// Change the badge background and position
+.mdl-badge[data-badge]:after {
+  background: $badgeColor;
+  top: -5px;
+  margin-right: 10px;
+}
+
+// Remove the underline on focus
+.mdl-textfield.is-focused .mdl-textfield__label:after {
+  visibility: hidden;
+}
+
+// Change the floating label
+.mdl-textfield--floating-label.is-focused .mdl-textfield__label,
+.mdl-textfield--floating-label.is-dirty .mdl-textfield__label {
+  color: #292d43d4;
+  font-size: 12px;
+  top: 4px;
+  visibility: visible;
+  font-weight: bold;
+}
